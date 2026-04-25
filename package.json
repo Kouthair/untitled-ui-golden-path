@@ -1,0 +1,8 @@
+{
+  "name": "untitled-ui-golden-path",
+  "scripts": {
+    "sync-ui": "node scripts/sync-upstream.mjs",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}
