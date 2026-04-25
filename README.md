@@ -65,6 +65,10 @@ Run `npm run storybook` to view all base components. Storybook acts as the AI's 
 ## 🏢 Enterprise Upgrades
 This base template is built for instant setup. When your team scales, check `ENTERPRISE_UPGRADES.md` for drop-in instructions to add advanced tooling like Tokens Studio and Chromatic.
 
+## 🏢 Scaling to Enterprise?
+If you are managing large teams, need automated Figma-to-Code syncing, or want visual regression testing, read the Enterprise Upgrades Guide →
+
+
 ## 🛠️ Scripts
 
 - `npm run dev`: Start the Vite development server.
