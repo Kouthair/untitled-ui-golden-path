@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
-/* Tell Tailwind to scan the vendor folder */
+/* Tell Tailwind to scan both vendor and your app code */
 @source "../vendor/ui"; 
+@source "../src"; 
 
-/* Import the real Untitled UI theme */
+/* Import the resets */
+@import "../vendor/ui/styles/globals.css";
+
+/* Import the visual theme */
 @import "../vendor/ui/styles/theme.css";
 @import "../vendor/ui/styles/typography.css";
 
