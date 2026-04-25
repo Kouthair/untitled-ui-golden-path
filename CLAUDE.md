@@ -1,4 +1,3 @@
-
 🛡️ Project Architecture & AI Guardrails
 1. The Core Paradigm: Figma is a Wireframe
 When using Figma MCP, treat the Figma design strictly as a structural layout guide.
@@ -19,13 +18,28 @@ BANNED: Raw hexes (#fff), raw RGB (rgb(0,0,0)), arbitrary color values (bg-[#123
 4. Typography & Spacing
 Typography: Use the strict type scale defined in theme.css: text-xs, text-sm, text-md, text-lg, text-xl, text-display-xs, etc. Do NOT use arbitrary pixel text sizes (e.g., text-[16px]).
 Spacing: Use standard Tailwind spacing numbers for layout (e.g., p-4, gap-6, mt-8). Do NOT invent custom spacing names like p-md or gap-lg.
-5. How to assemble a page from Figma
+5. Figma-to-Code Translation Table
+When Figma MCP provides variables, translate them using this exact mapping. Do NOT guess.
+
+Figma "Background/Primary" → bg-primary
+Figma "Background/Secondary" → bg-secondary
+Figma "Background/Brand Solid" → bg-brand-solid
+Figma "Background/Brand Soft" → bg-brand-primary
+Figma "Text/Primary" → text-primary
+Figma "Text/Secondary" → text-secondary
+Figma "Text/Tertiary" → text-tertiary
+Figma "Border/Primary" → border-primary
+Figma "Border/Brand" → border-brand
+Figma "Focus Ring" → ring-brand
+Figma "Spacing/X" (e.g., 16) → Standard Tailwind spacing (e.g., p-4)
+6. How to assemble a page from Figma
 When given a Figma frame via MCP:
 
 Identify the base components needed (e.g., "This is a Card, this is an Input").
-Look at the TypeScript interfaces in vendor/ui to see its exact props and variants.
+IGNORE raw hex values from MCP. Use the Figma-to-Code Translation Table (Section 5) to map Figma variables to Tailwind classes.
+Look at the TypeScript interfaces in vendor/ui to see exact component props and variants.
 Assemble them using standard Tailwind layout classes (e.g., flex flex-col gap-4).
 Apply semantic color classes based on the component's intent (e.g., color="primary"), NOT the Figma fill color.
-6. Component Dictionary (Storybook)
+7. Component Dictionary (Storybook)
 If you are unsure about a component's props, variants, or sizing options, mentally reference the Storybook stories located in vendor/ui/components/.../*.story.tsx. Follow the exact patterns you see there.
 
