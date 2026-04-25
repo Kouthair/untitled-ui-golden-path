@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* TELL TAILWIND TO LOOK AT THE VENDOR FOLDER */
+@source "../vendor/ui"; 
+
+/* Import the real Untitled UI theme */
+@import "../vendor/ui/styles/theme.css";
+@import "../vendor/ui/styles/typography.css";

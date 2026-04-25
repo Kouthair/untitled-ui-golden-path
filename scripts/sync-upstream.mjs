@@ -13,7 +13,7 @@ const REPO_URL = 'https://github.com/untitleduico/react.git';
 const BRANCH = 'main';
 const TEMP_DIR = path.join(__dirname, '../temp-ui-sync');
 
-const FOLDERS_TO_SYNC = ['src/components', 'src/styles', 'src/hooks', 'src/utils'];
+const FOLDERS_TO_SYNC = ['components', 'styles', 'hooks', 'utils'];
 
 console.log('🔄 Starting Untitled UI sync...');
 
