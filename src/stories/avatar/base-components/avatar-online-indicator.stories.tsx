@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/avatar/base-components/avatar-online-indicator';
+import { AvatarOnlineIndicator } from '@ui/components/base/avatar/base-components/avatar-online-indicator';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof AvatarOnlineIndicator> = {
+  title: 'Base/avatar-online-indicator',
+  component: AvatarOnlineIndicator,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    className: { control: 'text' },
+
   },
 };
 
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    className: 'className value'
+
   },
 };
 

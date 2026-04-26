@@ -1,19 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/radio-buttons/radio-buttons';
+import { RadioButtonBase } from '@ui/components/base/radio-buttons/radio-buttons';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof RadioButtonBase> = {
+  title: 'Base/radio-buttons',
+  component: RadioButtonBase,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'text' },
-    className: { control: 'text' },
-    isFocusVisible: { control: 'text' },
-    isSelected: { control: 'text' },
-    isDisabled: { control: 'text' },
+
   },
 };
 
@@ -22,20 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    size: 'size value',
-    className: 'className value',
-    isFocusVisible: 'isFocusVisible value'
+
   },
 };
 
 // Generate additional variants for components with many props
 
-export const WithAllProps: Story = {
-  args: {
-    size: 'size example',
-    className: 'className example',
-    isFocusVisible: 'isFocusVisible example',
-    isSelected: 'isSelected example',
-    isDisabled: 'isDisabled example'
-  },
-};

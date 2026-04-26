@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/tags/base-components/tag-close-x';
+import { TagCloseX } from '@ui/components/base/tags/base-components/tag-close-x';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof TagCloseX> = {
+  title: 'Base/tag-close-x',
+  component: TagCloseX,
   parameters: {
     layout: 'centered',
   },

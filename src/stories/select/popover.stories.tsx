@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/select/popover';
+import { Popover } from '@ui/components/base/select/popover';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof Popover> = {
+  title: 'Base/popover',
+  component: Popover,
   parameters: {
     layout: 'centered',
   },

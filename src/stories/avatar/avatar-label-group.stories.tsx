@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/avatar/avatar-label-group';
+import { AvatarLabelGroup } from '@ui/components/base/avatar/avatar-label-group';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof AvatarLabelGroup> = {
+  title: 'Base/avatar-label-group',
+  component: AvatarLabelGroup,
   parameters: {
     layout: 'centered',
   },

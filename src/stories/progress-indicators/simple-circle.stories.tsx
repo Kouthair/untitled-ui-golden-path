@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/progress-indicators/simple-circle';
+import { CircleProgressBar } from '@ui/components/base/progress-indicators/simple-circle';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof CircleProgressBar> = {
+  title: 'Base/simple-circle',
+  component: CircleProgressBar,
   parameters: {
     layout: 'centered',
   },

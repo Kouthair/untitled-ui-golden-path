@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/slider/slider';
+import { Slider } from '@ui/components/base/slider/slider';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof Slider> = {
+  title: 'Base/slider',
+  component: Slider,
   parameters: {
     layout: 'centered',
   },

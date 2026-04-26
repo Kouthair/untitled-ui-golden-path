@@ -18,22 +18,40 @@ function extractComponentInfo(componentPath) {
   const content = fs.readFileSync(componentPath, 'utf8');
   const fileName = path.basename(componentPath, '.tsx');
 
-  // Extract component name from file
-  const componentNameMatch = content.match(/export\s+(?:default\s+)?(?:function|const)\s+(\w+)/);
-  const componentName = componentNameMatch ? componentNameMatch[2] : fileName;
+  // Extract component name from export statement - try multiple patterns
+  let componentName = null;
 
-  // Extract props interface if it exists
-  const propsInterfaceMatch = content.match(/interface\s+(\w+Props)\s*{([^}]*)}/s);
-  let props = [];
-
-  if (propsInterfaceMatch) {
-    const propsContent = propsInterfaceMatch[2];
-    // Extract prop names (basic regex, could be enhanced)
-    const propMatches = propsContent.matchAll(/(\w+)\s*\?/g);
-    props = Array.from(propMatches, match => match[1]);
+  // Pattern 1: export { ComponentName }
+  const exportMatch = content.match(/export\s*{\s*(\w+)\s*}/);
+  if (exportMatch) {
+    componentName = exportMatch[1];
   }
 
-  return { componentName, props, fileName };
+  // Pattern 2: export const ComponentName =
+  if (!componentName) {
+    const constMatch = content.match(/export\s+const\s+(\w+)\s*=/);
+    if (constMatch) {
+      componentName = constMatch[1];
+    }
+  }
+
+  // Pattern 3: export default function ComponentName
+  if (!componentName) {
+    const defaultMatch = content.match(/export\s+(?:default\s+)?(?:function|const)\s+(\w+)/);
+    if (defaultMatch) {
+      componentName = defaultMatch[2];
+    }
+  }
+
+  // Fallback: Convert filename to PascalCase
+  if (!componentName) {
+    componentName = fileName
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join('');
+  }
+
+  return { componentName, props: [], fileName };
 }
 
 function generateStory(componentPath, relativePath) {
@@ -49,7 +67,7 @@ function generateStory(componentPath, relativePath) {
 import { ${componentName} } from '${importPath}';
 
 const meta: Meta<typeof ${componentName}> = {
-  title: 'Base/${componentName}',
+  title: 'Base/${fileName}',
   component: ${componentName},
   parameters: {
     layout: 'centered',
@@ -90,7 +108,7 @@ function processDirectory(dir, relativeBase = '') {
 
     if (stat.isDirectory()) {
       processDirectory(fullPath, path.join(relativeBase, item));
-    } else if (item.endsWith('.tsx') && !item.endsWith('.stories.tsx')) {
+    } else if (item.endsWith('.tsx') && !item.endsWith('.stories.tsx') && !item.endsWith('.demo.tsx') && !item.endsWith('.story.tsx')) {
       const relativePath = path.join(relativeBase, item);
       const storyPath = path.join(STORIES_DIR, relativePath.replace('.tsx', '.stories.tsx'));
 

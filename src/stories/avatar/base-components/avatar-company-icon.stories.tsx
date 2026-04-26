@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/avatar/base-components/avatar-company-icon';
+import { AvatarCompanyIcon } from '@ui/components/base/avatar/base-components/avatar-company-icon';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof AvatarCompanyIcon> = {
+  title: 'Base/avatar-company-icon',
+  component: AvatarCompanyIcon,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    alt: { control: 'text' },
+
   },
 };
 
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    alt: 'alt value'
+
   },
 };
 

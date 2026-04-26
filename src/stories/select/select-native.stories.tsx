@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/select/select-native';
+import { NativeSelect } from '@ui/components/base/select/select-native';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof NativeSelect> = {
+  title: 'Base/select-native',
+  component: NativeSelect,
   parameters: {
     layout: 'centered',
   },

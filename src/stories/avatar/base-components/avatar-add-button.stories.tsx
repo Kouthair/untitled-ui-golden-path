@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/avatar/base-components/avatar-add-button';
+import { AvatarAddButton } from '@ui/components/base/avatar/base-components/avatar-add-button';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof AvatarAddButton> = {
+  title: 'Base/avatar-add-button',
+  component: AvatarAddButton,
   parameters: {
     layout: 'centered',
   },

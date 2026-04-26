@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/buttons/social-logos';
+import { GoogleLogo } from '@ui/components/base/buttons/social-logos';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof GoogleLogo> = {
+  title: 'Base/social-logos',
+  component: GoogleLogo,
   parameters: {
     layout: 'centered',
   },

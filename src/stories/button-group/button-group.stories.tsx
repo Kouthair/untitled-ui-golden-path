@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/button-group/button-group';
+import { styles } from '@ui/components/base/button-group/button-group';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof styles> = {
+  title: 'Base/button-group',
+  component: styles,
   parameters: {
     layout: 'centered',
   },

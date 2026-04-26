@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/badges/badges';
+import { Badge } from '@ui/components/base/badges/badges';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof Badge> = {
+  title: 'Base/badges',
+  component: Badge,
   parameters: {
     layout: 'centered',
   },

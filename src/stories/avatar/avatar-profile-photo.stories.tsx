@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/avatar/avatar-profile-photo';
+import { AvatarProfilePhoto } from '@ui/components/base/avatar/avatar-profile-photo';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof AvatarProfilePhoto> = {
+  title: 'Base/avatar-profile-photo',
+  component: AvatarProfilePhoto,
   parameters: {
     layout: 'centered',
   },

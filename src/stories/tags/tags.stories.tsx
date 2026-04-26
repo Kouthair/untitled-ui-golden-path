@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/tags/tags';
+import { TagAvatar } from '@ui/components/base/tags/tags';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof TagAvatar> = {
+  title: 'Base/tags',
+  component: TagAvatar,
   parameters: {
     layout: 'centered',
   },

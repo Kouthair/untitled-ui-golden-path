@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/input-payment';
+import { formatCardNumber } from '@ui/components/base/input/input-payment';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof formatCardNumber> = {
+  title: 'Base/input-payment',
+  component: formatCardNumber,
   parameters: {
     layout: 'centered',
   },

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/dropdown/dropdown-button-advanced';
+import { DropdownButtonAdvanced } from '@ui/components/base/dropdown/dropdown-button-advanced';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof DropdownButtonAdvanced> = {
+  title: 'Base/dropdown-button-advanced',
+  component: DropdownButtonAdvanced,
   parameters: {
     layout: 'centered',
   },

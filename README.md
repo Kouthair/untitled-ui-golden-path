@@ -55,7 +55,7 @@ The app currently demonstrates a clean Account Settings form using semantic desi
 ├── scripts/             # Automation tools
 │   ├── check-drift.mjs  # Design system validator
 │   ├── generate-colors.mjs  # Brand color generator
-│   └── generate-story.mjs   # Storybook story generator
+│   └── generate-stories.mjs  # Auto-generates Storybook stories for ALL base components
 ├── CLAUDE.md            # AI guardrails & translation table
 └── .storybook/          # Component documentation
 ```
@@ -72,7 +72,7 @@ The app currently demonstrates a clean Account Settings form using semantic desi
 - `npm run build-storybook`: Build Storybook for deployment
 - `npm run check-drift`: Scan codebase for design system violations
 - `npm run generate-colors <hex>`: Generate brand color variations from hex
-- `npm run generate-story <path>`: Generate Storybook stories for components
+- `npm run generate-stories`: Auto-generate Storybook stories for ALL base components
 - `npm run lint`: Run ESLint with design system rules
 
 ## 🤖 How to Use with AI (Figma MCP)
@@ -81,11 +81,11 @@ The app currently demonstrates a clean Account Settings form using semantic desi
 2. **Prompt Structure**: 
    > *"Using the Figma MCP context, build this component with `@ui/` imports. Follow CLAUDE.md rules: semantic colors only, standard spacing, no raw values."*
 3. **Validation**: Run `npm run check-drift` to catch any violations
-4. **Story Generation**: Use `npm run generate-story vendor/ui/components/base/select/select.tsx` to create Storybook stories
+4. **Auto-Storybooking**: Run `npm run generate-stories` to create 80+ Storybook stories for all base components
 
 **Pro Tip**: The `check-drift` script automatically detects banned patterns like raw hex codes or arbitrary spacing.
 
-## ⚡ Automation Features (Phase 1.1)
+## ⚡ Automation Features (Phase 1.1) ✅ COMPLETE
 
 ### Drift Prevention
 - **ESLint Rules**: Ban raw colors and arbitrary values at the linter level
@@ -97,8 +97,15 @@ The app currently demonstrates a clean Account Settings form using semantic desi
 - **Semantic Mapping**: Automatic conversion to design tokens
 
 ### Storybook Integration
-- **Auto-generation**: `npm run generate-story` creates stories from component files
-- **Component Dictionary**: AI can reference local stories for accurate props
+- **Auto-generation**: `npm run generate-stories` creates stories for ALL base components
+- **Component Dictionary**: AI can reference 80+ local stories for accurate props
+- **Unique Story IDs**: File-based naming prevents duplicate story conflicts
+
+---
+
+## 🎯 Phase 1.2: AI Dictionary Integration (Coming Soon)
+
+The final piece: MCP server integration that allows Claude/Cursor to query your local Storybook stories for component props and usage examples. This will complete the "AI-proof" design system by giving AI assistants perfect component knowledge.
 
 ### 1. Brand Colors
 Open `src/styles/theme-overrides.css` and redefine the brand scale. The whole app updates instantly.

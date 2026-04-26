@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/input';
+import { InputBase } from '@ui/components/base/input/input';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof InputBase> = {
+  title: 'Base/input',
+  component: InputBase,
   parameters: {
     layout: 'centered',
   },

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/input-group';
+import { InputPrefix } from '@ui/components/base/input/input-group';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof InputPrefix> = {
+  title: 'Base/input-group',
+  component: InputPrefix,
   parameters: {
     layout: 'centered',
   },

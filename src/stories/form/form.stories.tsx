@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/form/form';
+import { Form } from '@ui/components/base/form/form';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof Form> = {
+  title: 'Base/form',
+  component: Form,
   parameters: {
     layout: 'centered',
   },

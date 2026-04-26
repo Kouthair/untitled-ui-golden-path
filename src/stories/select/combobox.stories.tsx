@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/select/combobox';
+import { ComboBox } from '@ui/components/base/select/combobox';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof ComboBox> = {
+  title: 'Base/combobox',
+  component: ComboBox,
   parameters: {
     layout: 'centered',
   },

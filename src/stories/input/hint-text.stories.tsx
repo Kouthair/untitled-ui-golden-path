@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/hint-text';
+import { HintText } from '@ui/components/base/input/hint-text';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof HintText> = {
+  title: 'Base/hint-text',
+  component: HintText,
   parameters: {
     layout: 'centered',
   },

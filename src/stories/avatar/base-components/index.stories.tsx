@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { index } from '@ui/components/base/avatar/base-components/index';
+import { Index } from '@ui/components/base/avatar/base-components/index';
 
-const meta: Meta<typeof index> = {
+const meta: Meta<typeof Index> = {
   title: 'Base/index',
-  component: index,
+  component: Index,
   parameters: {
     layout: 'centered',
   },

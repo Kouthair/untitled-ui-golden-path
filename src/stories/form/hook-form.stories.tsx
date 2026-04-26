@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/form/hook-form';
+import { useFormFieldContext } from '@ui/components/base/form/hook-form';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof useFormFieldContext> = {
+  title: 'Base/hook-form',
+  component: useFormFieldContext,
   parameters: {
     layout: 'centered',
   },

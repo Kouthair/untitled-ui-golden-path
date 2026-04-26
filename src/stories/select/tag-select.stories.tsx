@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/select/tag-select';
+import { TagSelect } from '@ui/components/base/select/tag-select';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof TagSelect> = {
+  title: 'Base/tag-select',
+  component: TagSelect,
   parameters: {
     layout: 'centered',
   },

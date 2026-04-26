@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/buttons/close-button';
+import { CloseButton } from '@ui/components/base/buttons/close-button';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof CloseButton> = {
+  title: 'Base/close-button',
+  component: CloseButton,
   parameters: {
     layout: 'centered',
   },

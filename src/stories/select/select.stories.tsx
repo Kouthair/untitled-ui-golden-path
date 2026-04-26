@@ -1,17 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { select } from '@ui/components/base/select/select';
+import { Select } from '@ui/components/base/select/select';
 
-const meta: Meta<typeof select> = {
+const meta: Meta<typeof Select> = {
   title: 'Base/select',
-  component: select,
+  component: Select,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    placeholder: { control: 'text' },
-    ref: { control: 'text' },
-    icon: { control: 'text' },
+
   },
 };
 
@@ -20,9 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    placeholder: 'placeholder value',
-    ref: 'ref value',
-    icon: 'icon value'
+
   },
 };
 

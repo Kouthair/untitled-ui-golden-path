@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/tooltip/tooltip';
+import { Tooltip } from '@ui/components/base/tooltip/tooltip';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof Tooltip> = {
+  title: 'Base/tooltip',
+  component: Tooltip,
   parameters: {
     layout: 'centered',
   },

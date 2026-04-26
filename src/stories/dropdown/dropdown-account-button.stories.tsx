@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/dropdown/dropdown-account-button';
+import { DropdownAccountButton } from '@ui/components/base/dropdown/dropdown-account-button';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof DropdownAccountButton> = {
+  title: 'Base/dropdown-account-button',
+  component: DropdownAccountButton,
   parameters: {
     layout: 'centered',
   },

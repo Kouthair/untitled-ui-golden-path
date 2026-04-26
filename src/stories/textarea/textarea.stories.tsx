@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/textarea/textarea';
+import { TextAreaBase } from '@ui/components/base/textarea/textarea';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof TextAreaBase> = {
+  title: 'Base/textarea',
+  component: TextAreaBase,
   parameters: {
     layout: 'centered',
   },

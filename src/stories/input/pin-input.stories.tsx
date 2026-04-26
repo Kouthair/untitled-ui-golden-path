@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/pin-input';
+import { PinInput } from '@ui/components/base/input/pin-input';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof PinInput> = {
+  title: 'Base/pin-input',
+  component: PinInput,
   parameters: {
     layout: 'centered',
   },

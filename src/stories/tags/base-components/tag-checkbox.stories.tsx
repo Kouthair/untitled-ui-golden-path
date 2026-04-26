@@ -1,19 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/tags/base-components/tag-checkbox';
+import { TagCheckbox } from '@ui/components/base/tags/base-components/tag-checkbox';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof TagCheckbox> = {
+  title: 'Base/tag-checkbox',
+  component: TagCheckbox,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'text' },
-    className: { control: 'text' },
-    isFocused: { control: 'text' },
-    isSelected: { control: 'text' },
-    isDisabled: { control: 'text' },
+
   },
 };
 
@@ -22,20 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    size: 'size value',
-    className: 'className value',
-    isFocused: 'isFocused value'
+
   },
 };
 
 // Generate additional variants for components with many props
 
-export const WithAllProps: Story = {
-  args: {
-    size: 'size example',
-    className: 'className example',
-    isFocused: 'isFocused example',
-    isSelected: 'isSelected example',
-    isDisabled: 'isDisabled example'
-  },
-};

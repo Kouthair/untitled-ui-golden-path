@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/input-date';
+import { InputDateBase } from '@ui/components/base/input/input-date';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof InputDateBase> = {
+  title: 'Base/input-date',
+  component: InputDateBase,
   parameters: {
     layout: 'centered',
   },

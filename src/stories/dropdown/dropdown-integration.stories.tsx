@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/dropdown/dropdown-integration';
+import { DropdownIntegration } from '@ui/components/base/dropdown/dropdown-integration';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof DropdownIntegration> = {
+  title: 'Base/dropdown-integration',
+  component: DropdownIntegration,
   parameters: {
     layout: 'centered',
   },

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/dropdown/dropdown-avatar';
+import { DropdownAvatar } from '@ui/components/base/dropdown/dropdown-avatar';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof DropdownAvatar> = {
+  title: 'Base/dropdown-avatar',
+  component: DropdownAvatar,
   parameters: {
     layout: 'centered',
   },

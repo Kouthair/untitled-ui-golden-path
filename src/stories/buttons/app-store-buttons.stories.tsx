@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/buttons/app-store-buttons';
+import { GooglePlayButton } from '@ui/components/base/buttons/app-store-buttons';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof GooglePlayButton> = {
+  title: 'Base/app-store-buttons',
+  component: GooglePlayButton,
   parameters: {
     layout: 'centered',
   },

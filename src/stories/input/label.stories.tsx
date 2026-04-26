@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { undefined } from '@ui/components/base/input/label';
+import { Label } from '@ui/components/base/input/label';
 
-const meta: Meta<typeof undefined> = {
-  title: 'Base/undefined',
-  component: undefined,
+const meta: Meta<typeof Label> = {
+  title: 'Base/label',
+  component: Label,
   parameters: {
     layout: 'centered',
   },
