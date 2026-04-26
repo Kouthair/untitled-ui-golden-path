@@ -16,7 +16,7 @@ This repo eliminates that by:
 
 ```bash
 # 1. Clone the template
-git clone https://github.com/your-username/untitled-ui-golden-path.git my-app
+git clone https://github.com/your-org/ai-proof-design-system.git my-app
 cd my-app
 
 # 2. Install dependencies
@@ -29,23 +29,76 @@ npm run sync-ui
 npm run dev
 ```
 
+##  Current Example
+
+The app currently demonstrates a clean Account Settings form using semantic design tokens:
+
+- **Layout**: Centered card with `bg-primary`/`bg-secondary` contrast
+- **Components**: Untitled UI `<Input>` and `<Button>` with proper props
+- **Typography**: `text-display-xs` heading, `text-sm` subtitle
+- **Spacing**: Standard Tailwind values (`p-8`, `gap-4`, `mt-6`)
+- **No violations**: Zero raw colors, arbitrary values, or `dark:` prefixes
+
+**Live Demo**: Run `npm run dev` to see the AI-compliant form in action.
+
 ## 🏗️ Architecture
 
-This template uses a "Vendor Drop" architecture to keep your custom code strictly separated from the UI library, allowing seamless updates.
+**Vendor Drop Pattern**: Strict separation between Untitled UI source and custom code.
 
-- `vendor/ui/`: The Untitled UI source code (pulled via `sync-ui`). **Never edit files here.**
-- `src/styles/theme-overrides.css`: Where you apply client brand colors and structural changes.
-- `CLAUDE.md`: The AI instruction set that prevents drift.
-- `.storybook/`: The AI's dictionary for component props and variants.
+```
+├── vendor/ui/           # Untitled UI source (never edit)
+├── src/
+│   ├── components/      # Your custom components  
+│   ├── styles/
+│   │   └── theme-overrides.css  # Brand colors & structural changes
+│   └── stories/         # Generated Storybook stories
+├── scripts/             # Automation tools
+│   ├── check-drift.mjs  # Design system validator
+│   ├── generate-colors.mjs  # Brand color generator
+│   └── generate-story.mjs   # Storybook story generator
+├── CLAUDE.md            # AI guardrails & translation table
+└── .storybook/          # Component documentation
+```
+
+**Key Principle**: `vendor/ui/` is read-only. All customization goes through `theme-overrides.css` or new components in `src/`.
+
+## 🛠️ Scripts
+
+- `npm run dev`: Start the Vite development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run sync-ui`: Fetch latest Untitled UI components
+- `npm run storybook`: View component dictionary locally
+- `npm run build-storybook`: Build Storybook for deployment
+- `npm run check-drift`: Scan codebase for design system violations
+- `npm run generate-colors <hex>`: Generate brand color variations from hex
+- `npm run generate-story <path>`: Generate Storybook stories for components
+- `npm run lint`: Run ESLint with design system rules
 
 ## 🤖 How to Use with AI (Figma MCP)
 
-1. Open your Figma design file and select a frame.
-2. In your AI IDE (Claude Code, Cursor), use this prompt structure:
-   > *"Read the Figma MCP context for the selected frame. Assemble it using `@ui/` components. Ignore raw hex values and use the Figma-to-Code Translation Table in CLAUDE.md."*
-3. The AI will output perfectly compliant React code using semantic Tailwind classes.
+1. **Setup**: Ensure `CLAUDE.md` is in your workspace root
+2. **Prompt Structure**: 
+   > *"Using the Figma MCP context, build this component with `@ui/` imports. Follow CLAUDE.md rules: semantic colors only, standard spacing, no raw values."*
+3. **Validation**: Run `npm run check-drift` to catch any violations
+4. **Story Generation**: Use `npm run generate-story vendor/ui/components/base/select/select.tsx` to create Storybook stories
 
-## 🎨 Customizing for a Client
+**Pro Tip**: The `check-drift` script automatically detects banned patterns like raw hex codes or arbitrary spacing.
+
+## ⚡ Automation Features (Phase 1.1)
+
+### Drift Prevention
+- **ESLint Rules**: Ban raw colors and arbitrary values at the linter level
+- **Drift Checker**: `npm run check-drift` scans for design system violations
+- **Pre-commit Hooks**: Automatic validation before commits
+
+### Color Management  
+- **Brand Generator**: `npm run generate-colors #2563EB` creates full brand scales
+- **Semantic Mapping**: Automatic conversion to design tokens
+
+### Storybook Integration
+- **Auto-generation**: `npm run generate-story` creates stories from component files
+- **Component Dictionary**: AI can reference local stories for accurate props
 
 ### 1. Brand Colors
 Open `src/styles/theme-overrides.css` and redefine the brand scale. The whole app updates instantly.
@@ -62,18 +115,34 @@ Run `npm run storybook` to view all base components. Storybook acts as the AI's 
 
 **Note on Storybook Addon Designs:** We have `@storybook/addon-designs` installed. Do NOT use this on Untitled UI base components. It is strictly reserved for when you build *custom* client components and need to embed a specific Figma frame side-by-side with your custom code.
 
-## 🏢 Enterprise Upgrades
-This base template is built for instant setup. When your team scales, check `ENTERPRISE_UPGRADES.md` for drop-in instructions to add advanced tooling like Tokens Studio and Chromatic.
+## 🏢 Ready for Scale?
 
-## 🏢 Scaling to Enterprise?
-If you are managing large teams, need automated Figma-to-Code syncing, or want visual regression testing, read the Enterprise Upgrades Guide →
+This template includes enterprise-ready automation. When your team grows:
 
+- **Automated Figma Sync**: Tokens Studio integration
+- **Visual Regression**: Chromatic setup for UI testing  
+- **Advanced Workflows**: CI/CD pipelines and team collaboration
 
-## 🛠️ Scripts
+📖 **Enterprise Guide** → See `ENTERPRISE_UPGRADES.md` for drop-in scaling instructions.
 
-- `npm run dev`: Start the Vite development server.
-- `npm run sync-ui`: Fetch the latest Untitled UI components (skips locally modified files).
-- `npm run storybook`: View the component dictionary locally.
+## 🐛 Troubleshooting
+
+### Storybook Import Errors
+If `@/ui/` imports fail in Storybook, check that `vite.config.ts` has both aliases:
+```typescript
+"@ui": path.resolve(__dirname, './vendor/ui'),
+"@": path.resolve(__dirname, './vendor/ui')
+```
+
+### Drift Checker False Positives
+The drift checker is strict by design. If you need exceptions, add them to `scripts/check-drift.mjs`.
+
+### Component Not Found
+Run `npm run sync-ui` to ensure you have the latest Untitled UI components.
+
+## 🤝 Contributing
+
+This template welcomes improvements to the automation scripts and documentation. Please ensure all changes maintain the "AI-proof" design principles.
 
 ## 📄 License
-MIT
+MIT - Built with ❤️ for the design systems community.

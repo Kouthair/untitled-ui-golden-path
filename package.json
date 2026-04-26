@@ -12,6 +12,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "check-drift": "node scripts/check-drift.mjs",
+    "generate-story": "node scripts/generate-story.mjs",
     "generate-colors": "node scripts/generate-colors.mjs",
     "prepare": "husky"
   },
