@@ -11,5 +11,5 @@
 @import "../vendor/ui/styles/theme.css";
 @import "../vendor/ui/styles/typography.css";
 
-/* Future client overrides will go here */
-/* @import "./styles/theme-overrides.css"; */
+/* Import Client Overrides HERE */
+@import "./styles/theme-overrides.css";

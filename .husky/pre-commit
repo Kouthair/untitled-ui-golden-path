@@ -1,0 +1,5 @@
+
+
+
+echo "🛡️ Running AI Drift Detection..."
+npm run check-drift
