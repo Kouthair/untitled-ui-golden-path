@@ -23,16 +23,34 @@ const DRIFT_PATTERNS = [
     hint: "Use the strict type scale (e.g., text-xs, text-sm, text-md)."
   },
   {
-    name: "🚨 RAW HEX IN INLINE STYLES",
+    name: "🚨 ARBITRARY SPACING (px/rem)",
+    regex: /(p|m|gap)-\[\d+(\.\d+)?(px|rem)\]/g,
+    hint: "Use standard Tailwind spacing (e.g., p-4, gap-6, mt-8)."
+  },
+  {
+    name: "🚨 RAW RGB VALUES",
+    regex: /rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)/g,
+    hint: "Use semantic color tokens instead of raw RGB values."
+  },
+  {
+    name: "🚨 INLINE STYLES WITH RAW COLORS",
     regex: /style=["'`][^"'`]*#[0-9a-fA-F]{3,8}/g,
     hint: "Avoid inline styles with raw hex codes. Use Tailwind classes."
+  },
+  {
+    name: "🚨 RAW HTML BUTTONS",
+    regex: /<button[^>]*>/g,
+    hint: "Use Untitled UI Button component instead of raw HTML buttons."
   }
 ];
 
-const TARGET_DIR = path.resolve(__dirname, '../src');
+const TARGET_DIRS = [
+  path.resolve(__dirname, '../src')
+  // Note: We don't scan vendor/ui since it's read-only upstream code
+];
 let totalDrifts = 0;
 
-console.log(`🔍 Scanning ${TARGET_DIR} for design drift...\n`);
+console.log(`🔍 Scanning codebase for design drift...\n`);
 
 function scanFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
@@ -61,23 +79,28 @@ function scanFile(filePath) {
 
 function walkDir(dir) {
   const files = fs.readdirSync(dir);
-  
+
   files.forEach(file => {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
-    
+
     // Skip node_modules and vendor folders just in case
     if (stat.isDirectory()) {
-      if (file === 'node_modules' || file === 'vendor') return;
+      if (file === 'node_modules') return;
       walkDir(filePath);
-    } else if (/\.(tsx?|jsx?)$/.test(file)) {
+    } else if (/\.(tsx?|jsx?|css)$/.test(file)) {
       totalDrifts += scanFile(filePath);
     }
   });
 }
 
-// Run the scanner
-walkDir(TARGET_DIR);
+// Run the scanner on all target directories
+TARGET_DIRS.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    console.log(`🔍 Scanning ${path.relative(process.cwd(), dir)}...`);
+    walkDir(dir);
+  }
+});
 
 if (totalDrifts === 0) {
   console.log("✅ SUCCESS: Zero design drift detected. Codebase is clean.");

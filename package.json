@@ -13,12 +13,15 @@
     "build-storybook": "storybook build",
     "check-drift": "node scripts/check-drift.mjs",
     "generate-story": "node scripts/generate-story.mjs",
+    "generate-stories": "node scripts/generate-stories.mjs",
+    "generate-overrides": "node scripts/generate-overrides.js",
     "generate-colors": "node scripts/generate-colors.mjs",
     "prepare": "husky"
   },
   "dependencies": {
     "@react-stately/utils": "^3.12.0",
     "@untitledui/icons": "^0.0.22",
+    "colord": "^2.9.3",
     "framer-motion": "^12.38.0",
     "input-otp": "^1.4.2",
     "motion": "^12.38.0",
