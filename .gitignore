@@ -11,7 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
-src/stories/*
+src/stories/
+
+# Environment variables
+.env
+.env.*
 
 # Editor directories and files
 .vscode/*
@@ -24,11 +28,11 @@ src/stories/*
 *.sln
 *.sw?
 
-*storybook.log
-storybook-static
-
 # Vendor dependencies (Downloaded via npm run sync-ui)
 vendor/
 
 # Storybook build artifacts
 storybook-static/
+
+# Test coverage
+coverage/
